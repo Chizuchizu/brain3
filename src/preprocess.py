@@ -72,7 +72,7 @@ def run(cwd, data=False):
         data = pd.read_csv(cwd / "../datasets/dataset.csv")
         data = data.rename(
             columns={
-                "log P (octanol-water)": "target"
+                "IC50 (nM)": "target"
             }
         )
     data = fe(data, cwd)
