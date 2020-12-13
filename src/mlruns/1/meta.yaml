@@ -1,0 +1,4 @@
+artifact_location: file:///home/yuma/PycharmProjects/brain3/src/mlruns/1
+experiment_id: '1'
+lifecycle_stage: active
+name: fold_1
