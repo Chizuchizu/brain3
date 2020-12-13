@@ -7,7 +7,7 @@ import lightgbm
 # from preprocess import run
 import yaml
 
-debug = False
+debug = True
 if debug:
     from preprocess import run
 else:
@@ -18,7 +18,7 @@ if not debug:
     for line in sys.stdin:
         input_data.append(line.strip().split(","))
 
-    input_df = pd.DataFrame(data=input_data[1:], columns=input_data[0])
+    input_df = pd.DataFrame(data=input_data, columns=["SMILES"])
     data = input_df.replace("", None)
 else:
 

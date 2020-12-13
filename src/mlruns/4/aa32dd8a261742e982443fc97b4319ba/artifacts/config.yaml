@@ -1,15 +1,14 @@
-inference: False
+inference: false
 base:
   n_folds: 4
   num_boost_round: 2000
   seed: 1234
   submit: true
-
 parameters:
-  objective: "regression"
-  metric: "rmse"
+  objective: regression
+  metric: rmse
   num_leaves: 31
   max_depth: 6
-  learning_rate: .03
+  learning_rate: 0.05
   feature_fraction: 0.5
   verbose: -1
