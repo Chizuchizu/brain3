@@ -6,8 +6,9 @@ import numpy as np
 import lightgbm
 # from preprocess import run
 import yaml
+import os
 
-debug = True
+debug = False
 if debug:
     from preprocess import run
 else:
@@ -26,11 +27,12 @@ else:
     for line in sys.stdin:
         input_data.append(line.strip().split(","))
 
-    input_df = pd.DataFrame(data=input_data[1:], columns=input_data[0])
+    input_df = pd.DataFrame(data=input_data, columns=["SMILES"])
     data = input_df.replace("", None)  # .drop(columns="log P (octanol-water)")
-
+# print(input_data, data.shape)
 data = run("", data).astype(float)
-
+# print(os.getcwd())
+# print(data.shape)
 filename = "config/training.yaml" if debug else "config.yaml"
 with open(filename, "r+") as f:
     cfg = yaml.load(f, Loader=yaml.SafeLoader)
