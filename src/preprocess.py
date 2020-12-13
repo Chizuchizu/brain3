@@ -21,10 +21,10 @@ import os
 # data = pd.read_csv("../datasets/dataset.csv")
 
 
-def mordred_fe(data, cwd):
+def mordred_fe(data, cwd, debug=False):
     # print(os.getcwd())
     filepath = cwd / "../features/mordred_fe.pkl"
-    if not os.path.isfile(filepath):
+    if not os.path.isfile(filepath) or debug:
         data["SMILES"] = data["SMILES"].transform(
             lambda x: Chem.MolFromSmiles(x)
         )
@@ -36,14 +36,13 @@ def mordred_fe(data, cwd):
             new_data.to_pickle(filepath)
     else:
         new_data = pd.read_pickle(filepath)
-
     return new_data
 
 
-def fe(data, cwd):
+def fe(data, cwd, debug):
     data["one_count_2"] = data["SMILES"].transform(lambda x: x.count("1")) == 2
 
-    a = mordred_fe(data, cwd)
+    a = mordred_fe(data, cwd, debug)
     data = pd.concat(
         [
             data,
@@ -62,7 +61,7 @@ def fe(data, cwd):
     return data
 
 
-def run(cwd, data=False):
+def run(cwd, data=False, debug=False):
     if type(cwd) == str:
         cwd = Path(cwd)
 
@@ -75,7 +74,7 @@ def run(cwd, data=False):
                 "IC50 (nM)": "target"
             }
         )
-    data = fe(data, cwd)
+    data = fe(data, cwd, debug)
 
     if train:
         data.to_pickle(cwd / "../features/data_1.pkl")

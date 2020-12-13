@@ -1,0 +1,776 @@
+artifact_path: model
+flavors:
+  lightgbm:
+    data: model.lgb
+    lgb_version: 3.1.1
+  python_function:
+    data: model.lgb
+    env: conda.yaml
+    loader_module: mlflow.lightgbm
+    python_version: 3.7.9
+run_id: 43e1694c676c4e27a795e35c45ba553f
+signature:
+  inputs: '[{"name": "one_count_2", "type": "double"}, {"name": "ABC", "type": "double"},
+    {"name": "ABCGG", "type": "double"}, {"name": "nAcid", "type": "double"}, {"name":
+    "nBase", "type": "double"}, {"name": "SpAbs_A", "type": "double"}, {"name": "SpMax_A",
+    "type": "double"}, {"name": "SpDiam_A", "type": "double"}, {"name": "SpAD_A",
+    "type": "double"}, {"name": "SpMAD_A", "type": "double"}, {"name": "LogEE_A",
+    "type": "double"}, {"name": "VE1_A", "type": "double"}, {"name": "VE2_A", "type":
+    "double"}, {"name": "VE3_A", "type": "double"}, {"name": "VR1_A", "type": "double"},
+    {"name": "VR2_A", "type": "double"}, {"name": "VR3_A", "type": "double"}, {"name":
+    "nAromAtom", "type": "double"}, {"name": "nAromBond", "type": "double"}, {"name":
+    "nAtom", "type": "double"}, {"name": "nHeavyAtom", "type": "double"}, {"name":
+    "nSpiro", "type": "double"}, {"name": "nBridgehead", "type": "double"}, {"name":
+    "nHetero", "type": "double"}, {"name": "nH", "type": "double"}, {"name": "nB",
+    "type": "double"}, {"name": "nC", "type": "double"}, {"name": "nN", "type": "double"},
+    {"name": "nO", "type": "double"}, {"name": "nS", "type": "double"}, {"name": "nP",
+    "type": "double"}, {"name": "nF", "type": "double"}, {"name": "nCl", "type": "double"},
+    {"name": "nBr", "type": "double"}, {"name": "nI", "type": "double"}, {"name":
+    "nX", "type": "double"}, {"name": "ATS0dv", "type": "double"}, {"name": "ATS1dv",
+    "type": "double"}, {"name": "ATS2dv", "type": "double"}, {"name": "ATS3dv", "type":
+    "double"}, {"name": "ATS4dv", "type": "double"}, {"name": "ATS5dv", "type": "double"},
+    {"name": "ATS6dv", "type": "double"}, {"name": "ATS7dv", "type": "double"}, {"name":
+    "ATS8dv", "type": "double"}, {"name": "ATS0d", "type": "double"}, {"name": "ATS1d",
+    "type": "double"}, {"name": "ATS2d", "type": "double"}, {"name": "ATS3d", "type":
+    "double"}, {"name": "ATS4d", "type": "double"}, {"name": "ATS5d", "type": "double"},
+    {"name": "ATS6d", "type": "double"}, {"name": "ATS7d", "type": "double"}, {"name":
+    "ATS8d", "type": "double"}, {"name": "ATS0s", "type": "double"}, {"name": "ATS1s",
+    "type": "double"}, {"name": "ATS2s", "type": "double"}, {"name": "ATS3s", "type":
+    "double"}, {"name": "ATS4s", "type": "double"}, {"name": "ATS5s", "type": "double"},
+    {"name": "ATS6s", "type": "double"}, {"name": "ATS7s", "type": "double"}, {"name":
+    "ATS8s", "type": "double"}, {"name": "ATS0Z", "type": "double"}, {"name": "ATS1Z",
+    "type": "double"}, {"name": "ATS2Z", "type": "double"}, {"name": "ATS3Z", "type":
+    "double"}, {"name": "ATS4Z", "type": "double"}, {"name": "ATS5Z", "type": "double"},
+    {"name": "ATS6Z", "type": "double"}, {"name": "ATS7Z", "type": "double"}, {"name":
+    "ATS8Z", "type": "double"}, {"name": "ATS0m", "type": "double"}, {"name": "ATS1m",
+    "type": "double"}, {"name": "ATS2m", "type": "double"}, {"name": "ATS3m", "type":
+    "double"}, {"name": "ATS4m", "type": "double"}, {"name": "ATS5m", "type": "double"},
+    {"name": "ATS6m", "type": "double"}, {"name": "ATS7m", "type": "double"}, {"name":
+    "ATS8m", "type": "double"}, {"name": "ATS0v", "type": "double"}, {"name": "ATS1v",
+    "type": "double"}, {"name": "ATS2v", "type": "double"}, {"name": "ATS3v", "type":
+    "double"}, {"name": "ATS4v", "type": "double"}, {"name": "ATS5v", "type": "double"},
+    {"name": "ATS6v", "type": "double"}, {"name": "ATS7v", "type": "double"}, {"name":
+    "ATS8v", "type": "double"}, {"name": "ATS0se", "type": "double"}, {"name": "ATS1se",
+    "type": "double"}, {"name": "ATS2se", "type": "double"}, {"name": "ATS3se", "type":
+    "double"}, {"name": "ATS4se", "type": "double"}, {"name": "ATS5se", "type": "double"},
+    {"name": "ATS6se", "type": "double"}, {"name": "ATS7se", "type": "double"}, {"name":
+    "ATS8se", "type": "double"}, {"name": "ATS0pe", "type": "double"}, {"name": "ATS1pe",
+    "type": "double"}, {"name": "ATS2pe", "type": "double"}, {"name": "ATS3pe", "type":
+    "double"}, {"name": "ATS4pe", "type": "double"}, {"name": "ATS5pe", "type": "double"},
+    {"name": "ATS6pe", "type": "double"}, {"name": "ATS7pe", "type": "double"}, {"name":
+    "ATS8pe", "type": "double"}, {"name": "ATS0are", "type": "double"}, {"name": "ATS1are",
+    "type": "double"}, {"name": "ATS2are", "type": "double"}, {"name": "ATS3are",
+    "type": "double"}, {"name": "ATS4are", "type": "double"}, {"name": "ATS5are",
+    "type": "double"}, {"name": "ATS6are", "type": "double"}, {"name": "ATS7are",
+    "type": "double"}, {"name": "ATS8are", "type": "double"}, {"name": "ATS0p", "type":
+    "double"}, {"name": "ATS1p", "type": "double"}, {"name": "ATS2p", "type": "double"},
+    {"name": "ATS3p", "type": "double"}, {"name": "ATS4p", "type": "double"}, {"name":
+    "ATS5p", "type": "double"}, {"name": "ATS6p", "type": "double"}, {"name": "ATS7p",
+    "type": "double"}, {"name": "ATS8p", "type": "double"}, {"name": "ATS0i", "type":
+    "double"}, {"name": "ATS1i", "type": "double"}, {"name": "ATS2i", "type": "double"},
+    {"name": "ATS3i", "type": "double"}, {"name": "ATS4i", "type": "double"}, {"name":
+    "ATS5i", "type": "double"}, {"name": "ATS6i", "type": "double"}, {"name": "ATS7i",
+    "type": "double"}, {"name": "ATS8i", "type": "double"}, {"name": "AATS0dv", "type":
+    "double"}, {"name": "AATS1dv", "type": "double"}, {"name": "AATS2dv", "type":
+    "double"}, {"name": "AATS3dv", "type": "double"}, {"name": "AATS4dv", "type":
+    "double"}, {"name": "AATS5dv", "type": "double"}, {"name": "AATS6dv", "type":
+    "double"}, {"name": "AATS7dv", "type": "double"}, {"name": "AATS8dv", "type":
+    "double"}, {"name": "AATS0d", "type": "double"}, {"name": "AATS1d", "type": "double"},
+    {"name": "AATS2d", "type": "double"}, {"name": "AATS3d", "type": "double"}, {"name":
+    "AATS4d", "type": "double"}, {"name": "AATS5d", "type": "double"}, {"name": "AATS6d",
+    "type": "double"}, {"name": "AATS7d", "type": "double"}, {"name": "AATS8d", "type":
+    "double"}, {"name": "AATS0s", "type": "double"}, {"name": "AATS1s", "type": "double"},
+    {"name": "AATS2s", "type": "double"}, {"name": "AATS3s", "type": "double"}, {"name":
+    "AATS4s", "type": "double"}, {"name": "AATS5s", "type": "double"}, {"name": "AATS6s",
+    "type": "double"}, {"name": "AATS7s", "type": "double"}, {"name": "AATS8s", "type":
+    "double"}, {"name": "AATS0Z", "type": "double"}, {"name": "AATS1Z", "type": "double"},
+    {"name": "AATS2Z", "type": "double"}, {"name": "AATS3Z", "type": "double"}, {"name":
+    "AATS4Z", "type": "double"}, {"name": "AATS5Z", "type": "double"}, {"name": "AATS6Z",
+    "type": "double"}, {"name": "AATS7Z", "type": "double"}, {"name": "AATS8Z", "type":
+    "double"}, {"name": "AATS0m", "type": "double"}, {"name": "AATS1m", "type": "double"},
+    {"name": "AATS2m", "type": "double"}, {"name": "AATS3m", "type": "double"}, {"name":
+    "AATS4m", "type": "double"}, {"name": "AATS5m", "type": "double"}, {"name": "AATS6m",
+    "type": "double"}, {"name": "AATS7m", "type": "double"}, {"name": "AATS8m", "type":
+    "double"}, {"name": "AATS0v", "type": "double"}, {"name": "AATS1v", "type": "double"},
+    {"name": "AATS2v", "type": "double"}, {"name": "AATS3v", "type": "double"}, {"name":
+    "AATS4v", "type": "double"}, {"name": "AATS5v", "type": "double"}, {"name": "AATS6v",
+    "type": "double"}, {"name": "AATS7v", "type": "double"}, {"name": "AATS8v", "type":
+    "double"}, {"name": "AATS0se", "type": "double"}, {"name": "AATS1se", "type":
+    "double"}, {"name": "AATS2se", "type": "double"}, {"name": "AATS3se", "type":
+    "double"}, {"name": "AATS4se", "type": "double"}, {"name": "AATS5se", "type":
+    "double"}, {"name": "AATS6se", "type": "double"}, {"name": "AATS7se", "type":
+    "double"}, {"name": "AATS8se", "type": "double"}, {"name": "AATS0pe", "type":
+    "double"}, {"name": "AATS1pe", "type": "double"}, {"name": "AATS2pe", "type":
+    "double"}, {"name": "AATS3pe", "type": "double"}, {"name": "AATS4pe", "type":
+    "double"}, {"name": "AATS5pe", "type": "double"}, {"name": "AATS6pe", "type":
+    "double"}, {"name": "AATS7pe", "type": "double"}, {"name": "AATS8pe", "type":
+    "double"}, {"name": "AATS0are", "type": "double"}, {"name": "AATS1are", "type":
+    "double"}, {"name": "AATS2are", "type": "double"}, {"name": "AATS3are", "type":
+    "double"}, {"name": "AATS4are", "type": "double"}, {"name": "AATS5are", "type":
+    "double"}, {"name": "AATS6are", "type": "double"}, {"name": "AATS7are", "type":
+    "double"}, {"name": "AATS8are", "type": "double"}, {"name": "AATS0p", "type":
+    "double"}, {"name": "AATS1p", "type": "double"}, {"name": "AATS2p", "type": "double"},
+    {"name": "AATS3p", "type": "double"}, {"name": "AATS4p", "type": "double"}, {"name":
+    "AATS5p", "type": "double"}, {"name": "AATS6p", "type": "double"}, {"name": "AATS7p",
+    "type": "double"}, {"name": "AATS8p", "type": "double"}, {"name": "AATS0i", "type":
+    "double"}, {"name": "AATS1i", "type": "double"}, {"name": "AATS2i", "type": "double"},
+    {"name": "AATS3i", "type": "double"}, {"name": "AATS4i", "type": "double"}, {"name":
+    "AATS5i", "type": "double"}, {"name": "AATS6i", "type": "double"}, {"name": "AATS7i",
+    "type": "double"}, {"name": "AATS8i", "type": "double"}, {"name": "ATSC0c", "type":
+    "double"}, {"name": "ATSC1c", "type": "double"}, {"name": "ATSC2c", "type": "double"},
+    {"name": "ATSC3c", "type": "double"}, {"name": "ATSC4c", "type": "double"}, {"name":
+    "ATSC5c", "type": "double"}, {"name": "ATSC6c", "type": "double"}, {"name": "ATSC7c",
+    "type": "double"}, {"name": "ATSC8c", "type": "double"}, {"name": "ATSC0dv", "type":
+    "double"}, {"name": "ATSC1dv", "type": "double"}, {"name": "ATSC2dv", "type":
+    "double"}, {"name": "ATSC3dv", "type": "double"}, {"name": "ATSC4dv", "type":
+    "double"}, {"name": "ATSC5dv", "type": "double"}, {"name": "ATSC6dv", "type":
+    "double"}, {"name": "ATSC7dv", "type": "double"}, {"name": "ATSC8dv", "type":
+    "double"}, {"name": "ATSC0d", "type": "double"}, {"name": "ATSC1d", "type": "double"},
+    {"name": "ATSC2d", "type": "double"}, {"name": "ATSC3d", "type": "double"}, {"name":
+    "ATSC4d", "type": "double"}, {"name": "ATSC5d", "type": "double"}, {"name": "ATSC6d",
+    "type": "double"}, {"name": "ATSC7d", "type": "double"}, {"name": "ATSC8d", "type":
+    "double"}, {"name": "ATSC0s", "type": "double"}, {"name": "ATSC1s", "type": "double"},
+    {"name": "ATSC2s", "type": "double"}, {"name": "ATSC3s", "type": "double"}, {"name":
+    "ATSC4s", "type": "double"}, {"name": "ATSC5s", "type": "double"}, {"name": "ATSC6s",
+    "type": "double"}, {"name": "ATSC7s", "type": "double"}, {"name": "ATSC8s", "type":
+    "double"}, {"name": "ATSC0Z", "type": "double"}, {"name": "ATSC1Z", "type": "double"},
+    {"name": "ATSC2Z", "type": "double"}, {"name": "ATSC3Z", "type": "double"}, {"name":
+    "ATSC4Z", "type": "double"}, {"name": "ATSC5Z", "type": "double"}, {"name": "ATSC6Z",
+    "type": "double"}, {"name": "ATSC7Z", "type": "double"}, {"name": "ATSC8Z", "type":
+    "double"}, {"name": "ATSC0m", "type": "double"}, {"name": "ATSC1m", "type": "double"},
+    {"name": "ATSC2m", "type": "double"}, {"name": "ATSC3m", "type": "double"}, {"name":
+    "ATSC4m", "type": "double"}, {"name": "ATSC5m", "type": "double"}, {"name": "ATSC6m",
+    "type": "double"}, {"name": "ATSC7m", "type": "double"}, {"name": "ATSC8m", "type":
+    "double"}, {"name": "ATSC0v", "type": "double"}, {"name": "ATSC1v", "type": "double"},
+    {"name": "ATSC2v", "type": "double"}, {"name": "ATSC3v", "type": "double"}, {"name":
+    "ATSC4v", "type": "double"}, {"name": "ATSC5v", "type": "double"}, {"name": "ATSC6v",
+    "type": "double"}, {"name": "ATSC7v", "type": "double"}, {"name": "ATSC8v", "type":
+    "double"}, {"name": "ATSC0se", "type": "double"}, {"name": "ATSC1se", "type":
+    "double"}, {"name": "ATSC2se", "type": "double"}, {"name": "ATSC3se", "type":
+    "double"}, {"name": "ATSC4se", "type": "double"}, {"name": "ATSC5se", "type":
+    "double"}, {"name": "ATSC6se", "type": "double"}, {"name": "ATSC7se", "type":
+    "double"}, {"name": "ATSC8se", "type": "double"}, {"name": "ATSC0pe", "type":
+    "double"}, {"name": "ATSC1pe", "type": "double"}, {"name": "ATSC2pe", "type":
+    "double"}, {"name": "ATSC3pe", "type": "double"}, {"name": "ATSC4pe", "type":
+    "double"}, {"name": "ATSC5pe", "type": "double"}, {"name": "ATSC6pe", "type":
+    "double"}, {"name": "ATSC7pe", "type": "double"}, {"name": "ATSC8pe", "type":
+    "double"}, {"name": "ATSC0are", "type": "double"}, {"name": "ATSC1are", "type":
+    "double"}, {"name": "ATSC2are", "type": "double"}, {"name": "ATSC3are", "type":
+    "double"}, {"name": "ATSC4are", "type": "double"}, {"name": "ATSC5are", "type":
+    "double"}, {"name": "ATSC6are", "type": "double"}, {"name": "ATSC7are", "type":
+    "double"}, {"name": "ATSC8are", "type": "double"}, {"name": "ATSC0p", "type":
+    "double"}, {"name": "ATSC1p", "type": "double"}, {"name": "ATSC2p", "type": "double"},
+    {"name": "ATSC3p", "type": "double"}, {"name": "ATSC4p", "type": "double"}, {"name":
+    "ATSC5p", "type": "double"}, {"name": "ATSC6p", "type": "double"}, {"name": "ATSC7p",
+    "type": "double"}, {"name": "ATSC8p", "type": "double"}, {"name": "ATSC0i", "type":
+    "double"}, {"name": "ATSC1i", "type": "double"}, {"name": "ATSC2i", "type": "double"},
+    {"name": "ATSC3i", "type": "double"}, {"name": "ATSC4i", "type": "double"}, {"name":
+    "ATSC5i", "type": "double"}, {"name": "ATSC6i", "type": "double"}, {"name": "ATSC7i",
+    "type": "double"}, {"name": "ATSC8i", "type": "double"}, {"name": "AATSC0c", "type":
+    "double"}, {"name": "AATSC1c", "type": "double"}, {"name": "AATSC2c", "type":
+    "double"}, {"name": "AATSC3c", "type": "double"}, {"name": "AATSC4c", "type":
+    "double"}, {"name": "AATSC5c", "type": "double"}, {"name": "AATSC6c", "type":
+    "double"}, {"name": "AATSC7c", "type": "double"}, {"name": "AATSC8c", "type":
+    "double"}, {"name": "AATSC0dv", "type": "double"}, {"name": "AATSC1dv", "type":
+    "double"}, {"name": "AATSC2dv", "type": "double"}, {"name": "AATSC3dv", "type":
+    "double"}, {"name": "AATSC4dv", "type": "double"}, {"name": "AATSC5dv", "type":
+    "double"}, {"name": "AATSC6dv", "type": "double"}, {"name": "AATSC7dv", "type":
+    "double"}, {"name": "AATSC8dv", "type": "double"}, {"name": "AATSC0d", "type":
+    "double"}, {"name": "AATSC1d", "type": "double"}, {"name": "AATSC2d", "type":
+    "double"}, {"name": "AATSC3d", "type": "double"}, {"name": "AATSC4d", "type":
+    "double"}, {"name": "AATSC5d", "type": "double"}, {"name": "AATSC6d", "type":
+    "double"}, {"name": "AATSC7d", "type": "double"}, {"name": "AATSC8d", "type":
+    "double"}, {"name": "AATSC0s", "type": "double"}, {"name": "AATSC1s", "type":
+    "double"}, {"name": "AATSC2s", "type": "double"}, {"name": "AATSC3s", "type":
+    "double"}, {"name": "AATSC4s", "type": "double"}, {"name": "AATSC5s", "type":
+    "double"}, {"name": "AATSC6s", "type": "double"}, {"name": "AATSC7s", "type":
+    "double"}, {"name": "AATSC8s", "type": "double"}, {"name": "AATSC0Z", "type":
+    "double"}, {"name": "AATSC1Z", "type": "double"}, {"name": "AATSC2Z", "type":
+    "double"}, {"name": "AATSC3Z", "type": "double"}, {"name": "AATSC4Z", "type":
+    "double"}, {"name": "AATSC5Z", "type": "double"}, {"name": "AATSC6Z", "type":
+    "double"}, {"name": "AATSC7Z", "type": "double"}, {"name": "AATSC8Z", "type":
+    "double"}, {"name": "AATSC0m", "type": "double"}, {"name": "AATSC1m", "type":
+    "double"}, {"name": "AATSC2m", "type": "double"}, {"name": "AATSC3m", "type":
+    "double"}, {"name": "AATSC4m", "type": "double"}, {"name": "AATSC5m", "type":
+    "double"}, {"name": "AATSC6m", "type": "double"}, {"name": "AATSC7m", "type":
+    "double"}, {"name": "AATSC8m", "type": "double"}, {"name": "AATSC0v", "type":
+    "double"}, {"name": "AATSC1v", "type": "double"}, {"name": "AATSC2v", "type":
+    "double"}, {"name": "AATSC3v", "type": "double"}, {"name": "AATSC4v", "type":
+    "double"}, {"name": "AATSC5v", "type": "double"}, {"name": "AATSC6v", "type":
+    "double"}, {"name": "AATSC7v", "type": "double"}, {"name": "AATSC8v", "type":
+    "double"}, {"name": "AATSC0se", "type": "double"}, {"name": "AATSC1se", "type":
+    "double"}, {"name": "AATSC2se", "type": "double"}, {"name": "AATSC3se", "type":
+    "double"}, {"name": "AATSC4se", "type": "double"}, {"name": "AATSC5se", "type":
+    "double"}, {"name": "AATSC6se", "type": "double"}, {"name": "AATSC7se", "type":
+    "double"}, {"name": "AATSC8se", "type": "double"}, {"name": "AATSC0pe", "type":
+    "double"}, {"name": "AATSC1pe", "type": "double"}, {"name": "AATSC2pe", "type":
+    "double"}, {"name": "AATSC3pe", "type": "double"}, {"name": "AATSC4pe", "type":
+    "double"}, {"name": "AATSC5pe", "type": "double"}, {"name": "AATSC6pe", "type":
+    "double"}, {"name": "AATSC7pe", "type": "double"}, {"name": "AATSC8pe", "type":
+    "double"}, {"name": "AATSC0are", "type": "double"}, {"name": "AATSC1are", "type":
+    "double"}, {"name": "AATSC2are", "type": "double"}, {"name": "AATSC3are", "type":
+    "double"}, {"name": "AATSC4are", "type": "double"}, {"name": "AATSC5are", "type":
+    "double"}, {"name": "AATSC6are", "type": "double"}, {"name": "AATSC7are", "type":
+    "double"}, {"name": "AATSC8are", "type": "double"}, {"name": "AATSC0p", "type":
+    "double"}, {"name": "AATSC1p", "type": "double"}, {"name": "AATSC2p", "type":
+    "double"}, {"name": "AATSC3p", "type": "double"}, {"name": "AATSC4p", "type":
+    "double"}, {"name": "AATSC5p", "type": "double"}, {"name": "AATSC6p", "type":
+    "double"}, {"name": "AATSC7p", "type": "double"}, {"name": "AATSC8p", "type":
+    "double"}, {"name": "AATSC0i", "type": "double"}, {"name": "AATSC1i", "type":
+    "double"}, {"name": "AATSC2i", "type": "double"}, {"name": "AATSC3i", "type":
+    "double"}, {"name": "AATSC4i", "type": "double"}, {"name": "AATSC5i", "type":
+    "double"}, {"name": "AATSC6i", "type": "double"}, {"name": "AATSC7i", "type":
+    "double"}, {"name": "AATSC8i", "type": "double"}, {"name": "MATS1c", "type": "double"},
+    {"name": "MATS2c", "type": "double"}, {"name": "MATS3c", "type": "double"}, {"name":
+    "MATS4c", "type": "double"}, {"name": "MATS5c", "type": "double"}, {"name": "MATS6c",
+    "type": "double"}, {"name": "MATS7c", "type": "double"}, {"name": "MATS8c", "type":
+    "double"}, {"name": "MATS1dv", "type": "double"}, {"name": "MATS2dv", "type":
+    "double"}, {"name": "MATS3dv", "type": "double"}, {"name": "MATS4dv", "type":
+    "double"}, {"name": "MATS5dv", "type": "double"}, {"name": "MATS6dv", "type":
+    "double"}, {"name": "MATS7dv", "type": "double"}, {"name": "MATS8dv", "type":
+    "double"}, {"name": "MATS1d", "type": "double"}, {"name": "MATS2d", "type": "double"},
+    {"name": "MATS3d", "type": "double"}, {"name": "MATS4d", "type": "double"}, {"name":
+    "MATS5d", "type": "double"}, {"name": "MATS6d", "type": "double"}, {"name": "MATS7d",
+    "type": "double"}, {"name": "MATS8d", "type": "double"}, {"name": "MATS1s", "type":
+    "double"}, {"name": "MATS2s", "type": "double"}, {"name": "MATS3s", "type": "double"},
+    {"name": "MATS4s", "type": "double"}, {"name": "MATS5s", "type": "double"}, {"name":
+    "MATS6s", "type": "double"}, {"name": "MATS7s", "type": "double"}, {"name": "MATS8s",
+    "type": "double"}, {"name": "MATS1Z", "type": "double"}, {"name": "MATS2Z", "type":
+    "double"}, {"name": "MATS3Z", "type": "double"}, {"name": "MATS4Z", "type": "double"},
+    {"name": "MATS5Z", "type": "double"}, {"name": "MATS6Z", "type": "double"}, {"name":
+    "MATS7Z", "type": "double"}, {"name": "MATS8Z", "type": "double"}, {"name": "MATS1m",
+    "type": "double"}, {"name": "MATS2m", "type": "double"}, {"name": "MATS3m", "type":
+    "double"}, {"name": "MATS4m", "type": "double"}, {"name": "MATS5m", "type": "double"},
+    {"name": "MATS6m", "type": "double"}, {"name": "MATS7m", "type": "double"}, {"name":
+    "MATS8m", "type": "double"}, {"name": "MATS1v", "type": "double"}, {"name": "MATS2v",
+    "type": "double"}, {"name": "MATS3v", "type": "double"}, {"name": "MATS4v", "type":
+    "double"}, {"name": "MATS5v", "type": "double"}, {"name": "MATS6v", "type": "double"},
+    {"name": "MATS7v", "type": "double"}, {"name": "MATS8v", "type": "double"}, {"name":
+    "MATS1se", "type": "double"}, {"name": "MATS2se", "type": "double"}, {"name":
+    "MATS3se", "type": "double"}, {"name": "MATS4se", "type": "double"}, {"name":
+    "MATS5se", "type": "double"}, {"name": "MATS6se", "type": "double"}, {"name":
+    "MATS7se", "type": "double"}, {"name": "MATS8se", "type": "double"}, {"name":
+    "MATS1pe", "type": "double"}, {"name": "MATS2pe", "type": "double"}, {"name":
+    "MATS3pe", "type": "double"}, {"name": "MATS4pe", "type": "double"}, {"name":
+    "MATS5pe", "type": "double"}, {"name": "MATS6pe", "type": "double"}, {"name":
+    "MATS7pe", "type": "double"}, {"name": "MATS8pe", "type": "double"}, {"name":
+    "MATS1are", "type": "double"}, {"name": "MATS2are", "type": "double"}, {"name":
+    "MATS3are", "type": "double"}, {"name": "MATS4are", "type": "double"}, {"name":
+    "MATS5are", "type": "double"}, {"name": "MATS6are", "type": "double"}, {"name":
+    "MATS7are", "type": "double"}, {"name": "MATS8are", "type": "double"}, {"name":
+    "MATS1p", "type": "double"}, {"name": "MATS2p", "type": "double"}, {"name": "MATS3p",
+    "type": "double"}, {"name": "MATS4p", "type": "double"}, {"name": "MATS5p", "type":
+    "double"}, {"name": "MATS6p", "type": "double"}, {"name": "MATS7p", "type": "double"},
+    {"name": "MATS8p", "type": "double"}, {"name": "MATS1i", "type": "double"}, {"name":
+    "MATS2i", "type": "double"}, {"name": "MATS3i", "type": "double"}, {"name": "MATS4i",
+    "type": "double"}, {"name": "MATS5i", "type": "double"}, {"name": "MATS6i", "type":
+    "double"}, {"name": "MATS7i", "type": "double"}, {"name": "MATS8i", "type": "double"},
+    {"name": "GATS1c", "type": "double"}, {"name": "GATS2c", "type": "double"}, {"name":
+    "GATS3c", "type": "double"}, {"name": "GATS4c", "type": "double"}, {"name": "GATS5c",
+    "type": "double"}, {"name": "GATS6c", "type": "double"}, {"name": "GATS7c", "type":
+    "double"}, {"name": "GATS8c", "type": "double"}, {"name": "GATS1dv", "type": "double"},
+    {"name": "GATS2dv", "type": "double"}, {"name": "GATS3dv", "type": "double"},
+    {"name": "GATS4dv", "type": "double"}, {"name": "GATS5dv", "type": "double"},
+    {"name": "GATS6dv", "type": "double"}, {"name": "GATS7dv", "type": "double"},
+    {"name": "GATS8dv", "type": "double"}, {"name": "GATS1d", "type": "double"}, {"name":
+    "GATS2d", "type": "double"}, {"name": "GATS3d", "type": "double"}, {"name": "GATS4d",
+    "type": "double"}, {"name": "GATS5d", "type": "double"}, {"name": "GATS6d", "type":
+    "double"}, {"name": "GATS7d", "type": "double"}, {"name": "GATS8d", "type": "double"},
+    {"name": "GATS1s", "type": "double"}, {"name": "GATS2s", "type": "double"}, {"name":
+    "GATS3s", "type": "double"}, {"name": "GATS4s", "type": "double"}, {"name": "GATS5s",
+    "type": "double"}, {"name": "GATS6s", "type": "double"}, {"name": "GATS7s", "type":
+    "double"}, {"name": "GATS8s", "type": "double"}, {"name": "GATS1Z", "type": "double"},
+    {"name": "GATS2Z", "type": "double"}, {"name": "GATS3Z", "type": "double"}, {"name":
+    "GATS4Z", "type": "double"}, {"name": "GATS5Z", "type": "double"}, {"name": "GATS6Z",
+    "type": "double"}, {"name": "GATS7Z", "type": "double"}, {"name": "GATS8Z", "type":
+    "double"}, {"name": "GATS1m", "type": "double"}, {"name": "GATS2m", "type": "double"},
+    {"name": "GATS3m", "type": "double"}, {"name": "GATS4m", "type": "double"}, {"name":
+    "GATS5m", "type": "double"}, {"name": "GATS6m", "type": "double"}, {"name": "GATS7m",
+    "type": "double"}, {"name": "GATS8m", "type": "double"}, {"name": "GATS1v", "type":
+    "double"}, {"name": "GATS2v", "type": "double"}, {"name": "GATS3v", "type": "double"},
+    {"name": "GATS4v", "type": "double"}, {"name": "GATS5v", "type": "double"}, {"name":
+    "GATS6v", "type": "double"}, {"name": "GATS7v", "type": "double"}, {"name": "GATS8v",
+    "type": "double"}, {"name": "GATS1se", "type": "double"}, {"name": "GATS2se",
+    "type": "double"}, {"name": "GATS3se", "type": "double"}, {"name": "GATS4se",
+    "type": "double"}, {"name": "GATS5se", "type": "double"}, {"name": "GATS6se",
+    "type": "double"}, {"name": "GATS7se", "type": "double"}, {"name": "GATS8se",
+    "type": "double"}, {"name": "GATS1pe", "type": "double"}, {"name": "GATS2pe",
+    "type": "double"}, {"name": "GATS3pe", "type": "double"}, {"name": "GATS4pe",
+    "type": "double"}, {"name": "GATS5pe", "type": "double"}, {"name": "GATS6pe",
+    "type": "double"}, {"name": "GATS7pe", "type": "double"}, {"name": "GATS8pe",
+    "type": "double"}, {"name": "GATS1are", "type": "double"}, {"name": "GATS2are",
+    "type": "double"}, {"name": "GATS3are", "type": "double"}, {"name": "GATS4are",
+    "type": "double"}, {"name": "GATS5are", "type": "double"}, {"name": "GATS6are",
+    "type": "double"}, {"name": "GATS7are", "type": "double"}, {"name": "GATS8are",
+    "type": "double"}, {"name": "GATS1p", "type": "double"}, {"name": "GATS2p", "type":
+    "double"}, {"name": "GATS3p", "type": "double"}, {"name": "GATS4p", "type": "double"},
+    {"name": "GATS5p", "type": "double"}, {"name": "GATS6p", "type": "double"}, {"name":
+    "GATS7p", "type": "double"}, {"name": "GATS8p", "type": "double"}, {"name": "GATS1i",
+    "type": "double"}, {"name": "GATS2i", "type": "double"}, {"name": "GATS3i", "type":
+    "double"}, {"name": "GATS4i", "type": "double"}, {"name": "GATS5i", "type": "double"},
+    {"name": "GATS6i", "type": "double"}, {"name": "GATS7i", "type": "double"}, {"name":
+    "GATS8i", "type": "double"}, {"name": "BCUTc-1h", "type": "double"}, {"name":
+    "BCUTc-1l", "type": "double"}, {"name": "BCUTdv-1h", "type": "double"}, {"name":
+    "BCUTdv-1l", "type": "double"}, {"name": "BCUTd-1h", "type": "double"}, {"name":
+    "BCUTd-1l", "type": "double"}, {"name": "BCUTs-1h", "type": "double"}, {"name":
+    "BCUTs-1l", "type": "double"}, {"name": "BCUTZ-1h", "type": "double"}, {"name":
+    "BCUTZ-1l", "type": "double"}, {"name": "BCUTm-1h", "type": "double"}, {"name":
+    "BCUTm-1l", "type": "double"}, {"name": "BCUTv-1h", "type": "double"}, {"name":
+    "BCUTv-1l", "type": "double"}, {"name": "BCUTse-1h", "type": "double"}, {"name":
+    "BCUTse-1l", "type": "double"}, {"name": "BCUTpe-1h", "type": "double"}, {"name":
+    "BCUTpe-1l", "type": "double"}, {"name": "BCUTare-1h", "type": "double"}, {"name":
+    "BCUTare-1l", "type": "double"}, {"name": "BCUTp-1h", "type": "double"}, {"name":
+    "BCUTp-1l", "type": "double"}, {"name": "BCUTi-1h", "type": "double"}, {"name":
+    "BCUTi-1l", "type": "double"}, {"name": "BalabanJ", "type": "double"}, {"name":
+    "SpAbs_DzZ", "type": "double"}, {"name": "SpMax_DzZ", "type": "double"}, {"name":
+    "SpDiam_DzZ", "type": "double"}, {"name": "SpAD_DzZ", "type": "double"}, {"name":
+    "SpMAD_DzZ", "type": "double"}, {"name": "LogEE_DzZ", "type": "double"}, {"name":
+    "SM1_DzZ", "type": "double"}, {"name": "VE1_DzZ", "type": "double"}, {"name":
+    "VE2_DzZ", "type": "double"}, {"name": "VE3_DzZ", "type": "double"}, {"name":
+    "VR1_DzZ", "type": "double"}, {"name": "VR2_DzZ", "type": "double"}, {"name":
+    "VR3_DzZ", "type": "double"}, {"name": "SpAbs_Dzm", "type": "double"}, {"name":
+    "SpMax_Dzm", "type": "double"}, {"name": "SpDiam_Dzm", "type": "double"}, {"name":
+    "SpAD_Dzm", "type": "double"}, {"name": "SpMAD_Dzm", "type": "double"}, {"name":
+    "LogEE_Dzm", "type": "double"}, {"name": "SM1_Dzm", "type": "double"}, {"name":
+    "VE1_Dzm", "type": "double"}, {"name": "VE2_Dzm", "type": "double"}, {"name":
+    "VE3_Dzm", "type": "double"}, {"name": "VR1_Dzm", "type": "double"}, {"name":
+    "VR2_Dzm", "type": "double"}, {"name": "VR3_Dzm", "type": "double"}, {"name":
+    "SpAbs_Dzv", "type": "double"}, {"name": "SpMax_Dzv", "type": "double"}, {"name":
+    "SpDiam_Dzv", "type": "double"}, {"name": "SpAD_Dzv", "type": "double"}, {"name":
+    "SpMAD_Dzv", "type": "double"}, {"name": "LogEE_Dzv", "type": "double"}, {"name":
+    "SM1_Dzv", "type": "double"}, {"name": "VE1_Dzv", "type": "double"}, {"name":
+    "VE2_Dzv", "type": "double"}, {"name": "VE3_Dzv", "type": "double"}, {"name":
+    "VR1_Dzv", "type": "double"}, {"name": "VR2_Dzv", "type": "double"}, {"name":
+    "VR3_Dzv", "type": "double"}, {"name": "SpAbs_Dzse", "type": "double"}, {"name":
+    "SpMax_Dzse", "type": "double"}, {"name": "SpDiam_Dzse", "type": "double"}, {"name":
+    "SpAD_Dzse", "type": "double"}, {"name": "SpMAD_Dzse", "type": "double"}, {"name":
+    "LogEE_Dzse", "type": "double"}, {"name": "SM1_Dzse", "type": "double"}, {"name":
+    "VE1_Dzse", "type": "double"}, {"name": "VE2_Dzse", "type": "double"}, {"name":
+    "VE3_Dzse", "type": "double"}, {"name": "VR1_Dzse", "type": "double"}, {"name":
+    "VR2_Dzse", "type": "double"}, {"name": "VR3_Dzse", "type": "double"}, {"name":
+    "SpAbs_Dzpe", "type": "double"}, {"name": "SpMax_Dzpe", "type": "double"}, {"name":
+    "SpDiam_Dzpe", "type": "double"}, {"name": "SpAD_Dzpe", "type": "double"}, {"name":
+    "SpMAD_Dzpe", "type": "double"}, {"name": "LogEE_Dzpe", "type": "double"}, {"name":
+    "SM1_Dzpe", "type": "double"}, {"name": "VE1_Dzpe", "type": "double"}, {"name":
+    "VE2_Dzpe", "type": "double"}, {"name": "VE3_Dzpe", "type": "double"}, {"name":
+    "VR1_Dzpe", "type": "double"}, {"name": "VR2_Dzpe", "type": "double"}, {"name":
+    "VR3_Dzpe", "type": "double"}, {"name": "SpAbs_Dzare", "type": "double"}, {"name":
+    "SpMax_Dzare", "type": "double"}, {"name": "SpDiam_Dzare", "type": "double"},
+    {"name": "SpAD_Dzare", "type": "double"}, {"name": "SpMAD_Dzare", "type": "double"},
+    {"name": "LogEE_Dzare", "type": "double"}, {"name": "SM1_Dzare", "type": "double"},
+    {"name": "VE1_Dzare", "type": "double"}, {"name": "VE2_Dzare", "type": "double"},
+    {"name": "VE3_Dzare", "type": "double"}, {"name": "VR1_Dzare", "type": "double"},
+    {"name": "VR2_Dzare", "type": "double"}, {"name": "VR3_Dzare", "type": "double"},
+    {"name": "SpAbs_Dzp", "type": "double"}, {"name": "SpMax_Dzp", "type": "double"},
+    {"name": "SpDiam_Dzp", "type": "double"}, {"name": "SpAD_Dzp", "type": "double"},
+    {"name": "SpMAD_Dzp", "type": "double"}, {"name": "LogEE_Dzp", "type": "double"},
+    {"name": "SM1_Dzp", "type": "double"}, {"name": "VE1_Dzp", "type": "double"},
+    {"name": "VE2_Dzp", "type": "double"}, {"name": "VE3_Dzp", "type": "double"},
+    {"name": "VR1_Dzp", "type": "double"}, {"name": "VR2_Dzp", "type": "double"},
+    {"name": "VR3_Dzp", "type": "double"}, {"name": "SpAbs_Dzi", "type": "double"},
+    {"name": "SpMax_Dzi", "type": "double"}, {"name": "SpDiam_Dzi", "type": "double"},
+    {"name": "SpAD_Dzi", "type": "double"}, {"name": "SpMAD_Dzi", "type": "double"},
+    {"name": "LogEE_Dzi", "type": "double"}, {"name": "SM1_Dzi", "type": "double"},
+    {"name": "VE1_Dzi", "type": "double"}, {"name": "VE2_Dzi", "type": "double"},
+    {"name": "VE3_Dzi", "type": "double"}, {"name": "VR1_Dzi", "type": "double"},
+    {"name": "VR2_Dzi", "type": "double"}, {"name": "VR3_Dzi", "type": "double"},
+    {"name": "BertzCT", "type": "double"}, {"name": "nBonds", "type": "double"}, {"name":
+    "nBondsO", "type": "double"}, {"name": "nBondsS", "type": "double"}, {"name":
+    "nBondsD", "type": "double"}, {"name": "nBondsT", "type": "double"}, {"name":
+    "nBondsA", "type": "double"}, {"name": "nBondsM", "type": "double"}, {"name":
+    "nBondsKS", "type": "double"}, {"name": "nBondsKD", "type": "double"}, {"name":
+    "RNCG", "type": "double"}, {"name": "RPCG", "type": "double"}, {"name": "C1SP1",
+    "type": "double"}, {"name": "C2SP1", "type": "double"}, {"name": "C1SP2", "type":
+    "double"}, {"name": "C2SP2", "type": "double"}, {"name": "C3SP2", "type": "double"},
+    {"name": "C1SP3", "type": "double"}, {"name": "C2SP3", "type": "double"}, {"name":
+    "C3SP3", "type": "double"}, {"name": "C4SP3", "type": "double"}, {"name": "HybRatio",
+    "type": "double"}, {"name": "FCSP3", "type": "double"}, {"name": "Xch-3d", "type":
+    "double"}, {"name": "Xch-4d", "type": "double"}, {"name": "Xch-5d", "type": "double"},
+    {"name": "Xch-6d", "type": "double"}, {"name": "Xch-7d", "type": "double"}, {"name":
+    "Xch-3dv", "type": "double"}, {"name": "Xch-4dv", "type": "double"}, {"name":
+    "Xch-5dv", "type": "double"}, {"name": "Xch-6dv", "type": "double"}, {"name":
+    "Xch-7dv", "type": "double"}, {"name": "Xc-3d", "type": "double"}, {"name": "Xc-4d",
+    "type": "double"}, {"name": "Xc-5d", "type": "double"}, {"name": "Xc-6d", "type":
+    "double"}, {"name": "Xc-3dv", "type": "double"}, {"name": "Xc-4dv", "type": "double"},
+    {"name": "Xc-5dv", "type": "double"}, {"name": "Xc-6dv", "type": "double"}, {"name":
+    "Xpc-4d", "type": "double"}, {"name": "Xpc-5d", "type": "double"}, {"name": "Xpc-6d",
+    "type": "double"}, {"name": "Xpc-4dv", "type": "double"}, {"name": "Xpc-5dv",
+    "type": "double"}, {"name": "Xpc-6dv", "type": "double"}, {"name": "Xp-0d", "type":
+    "double"}, {"name": "Xp-1d", "type": "double"}, {"name": "Xp-2d", "type": "double"},
+    {"name": "Xp-3d", "type": "double"}, {"name": "Xp-4d", "type": "double"}, {"name":
+    "Xp-5d", "type": "double"}, {"name": "Xp-6d", "type": "double"}, {"name": "Xp-7d",
+    "type": "double"}, {"name": "AXp-0d", "type": "double"}, {"name": "AXp-1d", "type":
+    "double"}, {"name": "AXp-2d", "type": "double"}, {"name": "AXp-3d", "type": "double"},
+    {"name": "AXp-4d", "type": "double"}, {"name": "AXp-5d", "type": "double"}, {"name":
+    "AXp-6d", "type": "double"}, {"name": "AXp-7d", "type": "double"}, {"name": "Xp-0dv",
+    "type": "double"}, {"name": "Xp-1dv", "type": "double"}, {"name": "Xp-2dv", "type":
+    "double"}, {"name": "Xp-3dv", "type": "double"}, {"name": "Xp-4dv", "type": "double"},
+    {"name": "Xp-5dv", "type": "double"}, {"name": "Xp-6dv", "type": "double"}, {"name":
+    "Xp-7dv", "type": "double"}, {"name": "AXp-0dv", "type": "double"}, {"name": "AXp-1dv",
+    "type": "double"}, {"name": "AXp-2dv", "type": "double"}, {"name": "AXp-3dv",
+    "type": "double"}, {"name": "AXp-4dv", "type": "double"}, {"name": "AXp-5dv",
+    "type": "double"}, {"name": "AXp-6dv", "type": "double"}, {"name": "AXp-7dv",
+    "type": "double"}, {"name": "SZ", "type": "double"}, {"name": "Sm", "type": "double"},
+    {"name": "Sv", "type": "double"}, {"name": "Sse", "type": "double"}, {"name":
+    "Spe", "type": "double"}, {"name": "Sare", "type": "double"}, {"name": "Sp", "type":
+    "double"}, {"name": "Si", "type": "double"}, {"name": "MZ", "type": "double"},
+    {"name": "Mm", "type": "double"}, {"name": "Mv", "type": "double"}, {"name": "Mse",
+    "type": "double"}, {"name": "Mpe", "type": "double"}, {"name": "Mare", "type":
+    "double"}, {"name": "Mp", "type": "double"}, {"name": "Mi", "type": "double"},
+    {"name": "SpAbs_Dt", "type": "double"}, {"name": "SpMax_Dt", "type": "double"},
+    {"name": "SpDiam_Dt", "type": "double"}, {"name": "SpAD_Dt", "type": "double"},
+    {"name": "SpMAD_Dt", "type": "double"}, {"name": "LogEE_Dt", "type": "double"},
+    {"name": "SM1_Dt", "type": "double"}, {"name": "VE1_Dt", "type": "double"}, {"name":
+    "VE2_Dt", "type": "double"}, {"name": "VE3_Dt", "type": "double"}, {"name": "VR1_Dt",
+    "type": "double"}, {"name": "VR2_Dt", "type": "double"}, {"name": "VR3_Dt", "type":
+    "double"}, {"name": "DetourIndex", "type": "double"}, {"name": "SpAbs_D", "type":
+    "double"}, {"name": "SpMax_D", "type": "double"}, {"name": "SpDiam_D", "type":
+    "double"}, {"name": "SpAD_D", "type": "double"}, {"name": "SpMAD_D", "type": "double"},
+    {"name": "LogEE_D", "type": "double"}, {"name": "VE1_D", "type": "double"}, {"name":
+    "VE2_D", "type": "double"}, {"name": "VE3_D", "type": "double"}, {"name": "VR1_D",
+    "type": "double"}, {"name": "VR2_D", "type": "double"}, {"name": "VR3_D", "type":
+    "double"}, {"name": "NsLi", "type": "double"}, {"name": "NssBe", "type": "double"},
+    {"name": "NssssBe", "type": "double"}, {"name": "NssBH", "type": "double"}, {"name":
+    "NsssB", "type": "double"}, {"name": "NssssB", "type": "double"}, {"name": "NsCH3",
+    "type": "double"}, {"name": "NdCH2", "type": "double"}, {"name": "NssCH2", "type":
+    "double"}, {"name": "NtCH", "type": "double"}, {"name": "NdsCH", "type": "double"},
+    {"name": "NaaCH", "type": "double"}, {"name": "NsssCH", "type": "double"}, {"name":
+    "NddC", "type": "double"}, {"name": "NtsC", "type": "double"}, {"name": "NdssC",
+    "type": "double"}, {"name": "NaasC", "type": "double"}, {"name": "NaaaC", "type":
+    "double"}, {"name": "NssssC", "type": "double"}, {"name": "NsNH3", "type": "double"},
+    {"name": "NsNH2", "type": "double"}, {"name": "NssNH2", "type": "double"}, {"name":
+    "NdNH", "type": "double"}, {"name": "NssNH", "type": "double"}, {"name": "NaaNH",
+    "type": "double"}, {"name": "NtN", "type": "double"}, {"name": "NsssNH", "type":
+    "double"}, {"name": "NdsN", "type": "double"}, {"name": "NaaN", "type": "double"},
+    {"name": "NsssN", "type": "double"}, {"name": "NddsN", "type": "double"}, {"name":
+    "NaasN", "type": "double"}, {"name": "NssssN", "type": "double"}, {"name": "NsOH",
+    "type": "double"}, {"name": "NdO", "type": "double"}, {"name": "NssO", "type":
+    "double"}, {"name": "NaaO", "type": "double"}, {"name": "NsF", "type": "double"},
+    {"name": "NsSiH3", "type": "double"}, {"name": "NssSiH2", "type": "double"}, {"name":
+    "NsssSiH", "type": "double"}, {"name": "NssssSi", "type": "double"}, {"name":
+    "NsPH2", "type": "double"}, {"name": "NssPH", "type": "double"}, {"name": "NsssP",
+    "type": "double"}, {"name": "NdsssP", "type": "double"}, {"name": "NsssssP", "type":
+    "double"}, {"name": "NsSH", "type": "double"}, {"name": "NdS", "type": "double"},
+    {"name": "NssS", "type": "double"}, {"name": "NaaS", "type": "double"}, {"name":
+    "NdssS", "type": "double"}, {"name": "NddssS", "type": "double"}, {"name": "NsCl",
+    "type": "double"}, {"name": "NsGeH3", "type": "double"}, {"name": "NssGeH2", "type":
+    "double"}, {"name": "NsssGeH", "type": "double"}, {"name": "NssssGe", "type":
+    "double"}, {"name": "NsAsH2", "type": "double"}, {"name": "NssAsH", "type": "double"},
+    {"name": "NsssAs", "type": "double"}, {"name": "NsssdAs", "type": "double"}, {"name":
+    "NsssssAs", "type": "double"}, {"name": "NsSeH", "type": "double"}, {"name": "NdSe",
+    "type": "double"}, {"name": "NssSe", "type": "double"}, {"name": "NaaSe", "type":
+    "double"}, {"name": "NdssSe", "type": "double"}, {"name": "NddssSe", "type": "double"},
+    {"name": "NsBr", "type": "double"}, {"name": "NsSnH3", "type": "double"}, {"name":
+    "NssSnH2", "type": "double"}, {"name": "NsssSnH", "type": "double"}, {"name":
+    "NssssSn", "type": "double"}, {"name": "NsI", "type": "double"}, {"name": "NsPbH3",
+    "type": "double"}, {"name": "NssPbH2", "type": "double"}, {"name": "NsssPbH",
+    "type": "double"}, {"name": "NssssPb", "type": "double"}, {"name": "SsLi", "type":
+    "double"}, {"name": "SssBe", "type": "double"}, {"name": "SssssBe", "type": "double"},
+    {"name": "SssBH", "type": "double"}, {"name": "SsssB", "type": "double"}, {"name":
+    "SssssB", "type": "double"}, {"name": "SsCH3", "type": "double"}, {"name": "SdCH2",
+    "type": "double"}, {"name": "SssCH2", "type": "double"}, {"name": "StCH", "type":
+    "double"}, {"name": "SdsCH", "type": "double"}, {"name": "SaaCH", "type": "double"},
+    {"name": "SsssCH", "type": "double"}, {"name": "SddC", "type": "double"}, {"name":
+    "StsC", "type": "double"}, {"name": "SdssC", "type": "double"}, {"name": "SaasC",
+    "type": "double"}, {"name": "SaaaC", "type": "double"}, {"name": "SssssC", "type":
+    "double"}, {"name": "SsNH3", "type": "double"}, {"name": "SsNH2", "type": "double"},
+    {"name": "SssNH2", "type": "double"}, {"name": "SdNH", "type": "double"}, {"name":
+    "SssNH", "type": "double"}, {"name": "SaaNH", "type": "double"}, {"name": "StN",
+    "type": "double"}, {"name": "SsssNH", "type": "double"}, {"name": "SdsN", "type":
+    "double"}, {"name": "SaaN", "type": "double"}, {"name": "SsssN", "type": "double"},
+    {"name": "SddsN", "type": "double"}, {"name": "SaasN", "type": "double"}, {"name":
+    "SssssN", "type": "double"}, {"name": "SsOH", "type": "double"}, {"name": "SdO",
+    "type": "double"}, {"name": "SssO", "type": "double"}, {"name": "SaaO", "type":
+    "double"}, {"name": "SsF", "type": "double"}, {"name": "SsSiH3", "type": "double"},
+    {"name": "SssSiH2", "type": "double"}, {"name": "SsssSiH", "type": "double"},
+    {"name": "SssssSi", "type": "double"}, {"name": "SsPH2", "type": "double"}, {"name":
+    "SssPH", "type": "double"}, {"name": "SsssP", "type": "double"}, {"name": "SdsssP",
+    "type": "double"}, {"name": "SsssssP", "type": "double"}, {"name": "SsSH", "type":
+    "double"}, {"name": "SdS", "type": "double"}, {"name": "SssS", "type": "double"},
+    {"name": "SaaS", "type": "double"}, {"name": "SdssS", "type": "double"}, {"name":
+    "SddssS", "type": "double"}, {"name": "SsCl", "type": "double"}, {"name": "SsGeH3",
+    "type": "double"}, {"name": "SssGeH2", "type": "double"}, {"name": "SsssGeH",
+    "type": "double"}, {"name": "SssssGe", "type": "double"}, {"name": "SsAsH2", "type":
+    "double"}, {"name": "SssAsH", "type": "double"}, {"name": "SsssAs", "type": "double"},
+    {"name": "SsssdAs", "type": "double"}, {"name": "SsssssAs", "type": "double"},
+    {"name": "SsSeH", "type": "double"}, {"name": "SdSe", "type": "double"}, {"name":
+    "SssSe", "type": "double"}, {"name": "SaaSe", "type": "double"}, {"name": "SdssSe",
+    "type": "double"}, {"name": "SddssSe", "type": "double"}, {"name": "SsBr", "type":
+    "double"}, {"name": "SsSnH3", "type": "double"}, {"name": "SssSnH2", "type": "double"},
+    {"name": "SsssSnH", "type": "double"}, {"name": "SssssSn", "type": "double"},
+    {"name": "SsI", "type": "double"}, {"name": "SsPbH3", "type": "double"}, {"name":
+    "SssPbH2", "type": "double"}, {"name": "SsssPbH", "type": "double"}, {"name":
+    "SssssPb", "type": "double"}, {"name": "MAXsLi", "type": "double"}, {"name": "MAXssBe",
+    "type": "double"}, {"name": "MAXssssBe", "type": "double"}, {"name": "MAXssBH",
+    "type": "double"}, {"name": "MAXsssB", "type": "double"}, {"name": "MAXssssB",
+    "type": "double"}, {"name": "MAXsCH3", "type": "double"}, {"name": "MAXdCH2",
+    "type": "double"}, {"name": "MAXssCH2", "type": "double"}, {"name": "MAXtCH",
+    "type": "double"}, {"name": "MAXdsCH", "type": "double"}, {"name": "MAXaaCH",
+    "type": "double"}, {"name": "MAXsssCH", "type": "double"}, {"name": "MAXddC",
+    "type": "double"}, {"name": "MAXtsC", "type": "double"}, {"name": "MAXdssC", "type":
+    "double"}, {"name": "MAXaasC", "type": "double"}, {"name": "MAXaaaC", "type":
+    "double"}, {"name": "MAXssssC", "type": "double"}, {"name": "MAXsNH3", "type":
+    "double"}, {"name": "MAXsNH2", "type": "double"}, {"name": "MAXssNH2", "type":
+    "double"}, {"name": "MAXdNH", "type": "double"}, {"name": "MAXssNH", "type": "double"},
+    {"name": "MAXaaNH", "type": "double"}, {"name": "MAXtN", "type": "double"}, {"name":
+    "MAXsssNH", "type": "double"}, {"name": "MAXdsN", "type": "double"}, {"name":
+    "MAXaaN", "type": "double"}, {"name": "MAXsssN", "type": "double"}, {"name": "MAXddsN",
+    "type": "double"}, {"name": "MAXaasN", "type": "double"}, {"name": "MAXssssN",
+    "type": "double"}, {"name": "MAXsOH", "type": "double"}, {"name": "MAXdO", "type":
+    "double"}, {"name": "MAXssO", "type": "double"}, {"name": "MAXaaO", "type": "double"},
+    {"name": "MAXsF", "type": "double"}, {"name": "MAXsSiH3", "type": "double"}, {"name":
+    "MAXssSiH2", "type": "double"}, {"name": "MAXsssSiH", "type": "double"}, {"name":
+    "MAXssssSi", "type": "double"}, {"name": "MAXsPH2", "type": "double"}, {"name":
+    "MAXssPH", "type": "double"}, {"name": "MAXsssP", "type": "double"}, {"name":
+    "MAXdsssP", "type": "double"}, {"name": "MAXsssssP", "type": "double"}, {"name":
+    "MAXsSH", "type": "double"}, {"name": "MAXdS", "type": "double"}, {"name": "MAXssS",
+    "type": "double"}, {"name": "MAXaaS", "type": "double"}, {"name": "MAXdssS", "type":
+    "double"}, {"name": "MAXddssS", "type": "double"}, {"name": "MAXsCl", "type":
+    "double"}, {"name": "MAXsGeH3", "type": "double"}, {"name": "MAXssGeH2", "type":
+    "double"}, {"name": "MAXsssGeH", "type": "double"}, {"name": "MAXssssGe", "type":
+    "double"}, {"name": "MAXsAsH2", "type": "double"}, {"name": "MAXssAsH", "type":
+    "double"}, {"name": "MAXsssAs", "type": "double"}, {"name": "MAXsssdAs", "type":
+    "double"}, {"name": "MAXsssssAs", "type": "double"}, {"name": "MAXsSeH", "type":
+    "double"}, {"name": "MAXdSe", "type": "double"}, {"name": "MAXssSe", "type": "double"},
+    {"name": "MAXaaSe", "type": "double"}, {"name": "MAXdssSe", "type": "double"},
+    {"name": "MAXddssSe", "type": "double"}, {"name": "MAXsBr", "type": "double"},
+    {"name": "MAXsSnH3", "type": "double"}, {"name": "MAXssSnH2", "type": "double"},
+    {"name": "MAXsssSnH", "type": "double"}, {"name": "MAXssssSn", "type": "double"},
+    {"name": "MAXsI", "type": "double"}, {"name": "MAXsPbH3", "type": "double"}, {"name":
+    "MAXssPbH2", "type": "double"}, {"name": "MAXsssPbH", "type": "double"}, {"name":
+    "MAXssssPb", "type": "double"}, {"name": "MINsLi", "type": "double"}, {"name":
+    "MINssBe", "type": "double"}, {"name": "MINssssBe", "type": "double"}, {"name":
+    "MINssBH", "type": "double"}, {"name": "MINsssB", "type": "double"}, {"name":
+    "MINssssB", "type": "double"}, {"name": "MINsCH3", "type": "double"}, {"name":
+    "MINdCH2", "type": "double"}, {"name": "MINssCH2", "type": "double"}, {"name":
+    "MINtCH", "type": "double"}, {"name": "MINdsCH", "type": "double"}, {"name": "MINaaCH",
+    "type": "double"}, {"name": "MINsssCH", "type": "double"}, {"name": "MINddC",
+    "type": "double"}, {"name": "MINtsC", "type": "double"}, {"name": "MINdssC", "type":
+    "double"}, {"name": "MINaasC", "type": "double"}, {"name": "MINaaaC", "type":
+    "double"}, {"name": "MINssssC", "type": "double"}, {"name": "MINsNH3", "type":
+    "double"}, {"name": "MINsNH2", "type": "double"}, {"name": "MINssNH2", "type":
+    "double"}, {"name": "MINdNH", "type": "double"}, {"name": "MINssNH", "type": "double"},
+    {"name": "MINaaNH", "type": "double"}, {"name": "MINtN", "type": "double"}, {"name":
+    "MINsssNH", "type": "double"}, {"name": "MINdsN", "type": "double"}, {"name":
+    "MINaaN", "type": "double"}, {"name": "MINsssN", "type": "double"}, {"name": "MINddsN",
+    "type": "double"}, {"name": "MINaasN", "type": "double"}, {"name": "MINssssN",
+    "type": "double"}, {"name": "MINsOH", "type": "double"}, {"name": "MINdO", "type":
+    "double"}, {"name": "MINssO", "type": "double"}, {"name": "MINaaO", "type": "double"},
+    {"name": "MINsF", "type": "double"}, {"name": "MINsSiH3", "type": "double"}, {"name":
+    "MINssSiH2", "type": "double"}, {"name": "MINsssSiH", "type": "double"}, {"name":
+    "MINssssSi", "type": "double"}, {"name": "MINsPH2", "type": "double"}, {"name":
+    "MINssPH", "type": "double"}, {"name": "MINsssP", "type": "double"}, {"name":
+    "MINdsssP", "type": "double"}, {"name": "MINsssssP", "type": "double"}, {"name":
+    "MINsSH", "type": "double"}, {"name": "MINdS", "type": "double"}, {"name": "MINssS",
+    "type": "double"}, {"name": "MINaaS", "type": "double"}, {"name": "MINdssS", "type":
+    "double"}, {"name": "MINddssS", "type": "double"}, {"name": "MINsCl", "type":
+    "double"}, {"name": "MINsGeH3", "type": "double"}, {"name": "MINssGeH2", "type":
+    "double"}, {"name": "MINsssGeH", "type": "double"}, {"name": "MINssssGe", "type":
+    "double"}, {"name": "MINsAsH2", "type": "double"}, {"name": "MINssAsH", "type":
+    "double"}, {"name": "MINsssAs", "type": "double"}, {"name": "MINsssdAs", "type":
+    "double"}, {"name": "MINsssssAs", "type": "double"}, {"name": "MINsSeH", "type":
+    "double"}, {"name": "MINdSe", "type": "double"}, {"name": "MINssSe", "type": "double"},
+    {"name": "MINaaSe", "type": "double"}, {"name": "MINdssSe", "type": "double"},
+    {"name": "MINddssSe", "type": "double"}, {"name": "MINsBr", "type": "double"},
+    {"name": "MINsSnH3", "type": "double"}, {"name": "MINssSnH2", "type": "double"},
+    {"name": "MINsssSnH", "type": "double"}, {"name": "MINssssSn", "type": "double"},
+    {"name": "MINsI", "type": "double"}, {"name": "MINsPbH3", "type": "double"}, {"name":
+    "MINssPbH2", "type": "double"}, {"name": "MINsssPbH", "type": "double"}, {"name":
+    "MINssssPb", "type": "double"}, {"name": "ECIndex", "type": "double"}, {"name":
+    "ETA_alpha", "type": "double"}, {"name": "AETA_alpha", "type": "double"}, {"name":
+    "ETA_shape_p", "type": "double"}, {"name": "ETA_shape_y", "type": "double"}, {"name":
+    "ETA_shape_x", "type": "double"}, {"name": "ETA_beta", "type": "double"}, {"name":
+    "AETA_beta", "type": "double"}, {"name": "ETA_beta_s", "type": "double"}, {"name":
+    "AETA_beta_s", "type": "double"}, {"name": "ETA_beta_ns", "type": "double"}, {"name":
+    "AETA_beta_ns", "type": "double"}, {"name": "ETA_beta_ns_d", "type": "double"},
+    {"name": "AETA_beta_ns_d", "type": "double"}, {"name": "ETA_eta", "type": "double"},
+    {"name": "AETA_eta", "type": "double"}, {"name": "ETA_eta_L", "type": "double"},
+    {"name": "AETA_eta_L", "type": "double"}, {"name": "ETA_eta_R", "type": "double"},
+    {"name": "AETA_eta_R", "type": "double"}, {"name": "ETA_eta_RL", "type": "double"},
+    {"name": "AETA_eta_RL", "type": "double"}, {"name": "ETA_eta_F", "type": "double"},
+    {"name": "AETA_eta_F", "type": "double"}, {"name": "ETA_eta_FL", "type": "double"},
+    {"name": "AETA_eta_FL", "type": "double"}, {"name": "ETA_eta_B", "type": "double"},
+    {"name": "AETA_eta_B", "type": "double"}, {"name": "ETA_eta_BR", "type": "double"},
+    {"name": "AETA_eta_BR", "type": "double"}, {"name": "ETA_dAlpha_A", "type": "double"},
+    {"name": "ETA_dAlpha_B", "type": "double"}, {"name": "ETA_epsilon_1", "type":
+    "double"}, {"name": "ETA_epsilon_2", "type": "double"}, {"name": "ETA_epsilon_3",
+    "type": "double"}, {"name": "ETA_epsilon_4", "type": "double"}, {"name": "ETA_epsilon_5",
+    "type": "double"}, {"name": "ETA_dEpsilon_A", "type": "double"}, {"name": "ETA_dEpsilon_B",
+    "type": "double"}, {"name": "ETA_dEpsilon_C", "type": "double"}, {"name": "ETA_dEpsilon_D",
+    "type": "double"}, {"name": "ETA_dBeta", "type": "double"}, {"name": "AETA_dBeta",
+    "type": "double"}, {"name": "ETA_psi_1", "type": "double"}, {"name": "ETA_dPsi_A",
+    "type": "double"}, {"name": "ETA_dPsi_B", "type": "double"}, {"name": "fragCpx",
+    "type": "double"}, {"name": "fMF", "type": "double"}, {"name": "nHBAcc", "type":
+    "double"}, {"name": "nHBDon", "type": "double"}, {"name": "IC0", "type": "double"},
+    {"name": "IC1", "type": "double"}, {"name": "IC2", "type": "double"}, {"name":
+    "IC3", "type": "double"}, {"name": "IC4", "type": "double"}, {"name": "IC5", "type":
+    "double"}, {"name": "TIC0", "type": "double"}, {"name": "TIC1", "type": "double"},
+    {"name": "TIC2", "type": "double"}, {"name": "TIC3", "type": "double"}, {"name":
+    "TIC4", "type": "double"}, {"name": "TIC5", "type": "double"}, {"name": "SIC0",
+    "type": "double"}, {"name": "SIC1", "type": "double"}, {"name": "SIC2", "type":
+    "double"}, {"name": "SIC3", "type": "double"}, {"name": "SIC4", "type": "double"},
+    {"name": "SIC5", "type": "double"}, {"name": "BIC0", "type": "double"}, {"name":
+    "BIC1", "type": "double"}, {"name": "BIC2", "type": "double"}, {"name": "BIC3",
+    "type": "double"}, {"name": "BIC4", "type": "double"}, {"name": "BIC5", "type":
+    "double"}, {"name": "CIC0", "type": "double"}, {"name": "CIC1", "type": "double"},
+    {"name": "CIC2", "type": "double"}, {"name": "CIC3", "type": "double"}, {"name":
+    "CIC4", "type": "double"}, {"name": "CIC5", "type": "double"}, {"name": "MIC0",
+    "type": "double"}, {"name": "MIC1", "type": "double"}, {"name": "MIC2", "type":
+    "double"}, {"name": "MIC3", "type": "double"}, {"name": "MIC4", "type": "double"},
+    {"name": "MIC5", "type": "double"}, {"name": "ZMIC0", "type": "double"}, {"name":
+    "ZMIC1", "type": "double"}, {"name": "ZMIC2", "type": "double"}, {"name": "ZMIC3",
+    "type": "double"}, {"name": "ZMIC4", "type": "double"}, {"name": "ZMIC5", "type":
+    "double"}, {"name": "Kier1", "type": "double"}, {"name": "Kier2", "type": "double"},
+    {"name": "Kier3", "type": "double"}, {"name": "Lipinski", "type": "double"}, {"name":
+    "GhoseFilter", "type": "double"}, {"name": "FilterItLogS", "type": "double"},
+    {"name": "VMcGowan", "type": "double"}, {"name": "LabuteASA", "type": "double"},
+    {"name": "PEOE_VSA1", "type": "double"}, {"name": "PEOE_VSA2", "type": "double"},
+    {"name": "PEOE_VSA3", "type": "double"}, {"name": "PEOE_VSA4", "type": "double"},
+    {"name": "PEOE_VSA5", "type": "double"}, {"name": "PEOE_VSA6", "type": "double"},
+    {"name": "PEOE_VSA7", "type": "double"}, {"name": "PEOE_VSA8", "type": "double"},
+    {"name": "PEOE_VSA9", "type": "double"}, {"name": "PEOE_VSA10", "type": "double"},
+    {"name": "PEOE_VSA11", "type": "double"}, {"name": "PEOE_VSA12", "type": "double"},
+    {"name": "PEOE_VSA13", "type": "double"}, {"name": "SMR_VSA1", "type": "double"},
+    {"name": "SMR_VSA2", "type": "double"}, {"name": "SMR_VSA3", "type": "double"},
+    {"name": "SMR_VSA4", "type": "double"}, {"name": "SMR_VSA5", "type": "double"},
+    {"name": "SMR_VSA6", "type": "double"}, {"name": "SMR_VSA7", "type": "double"},
+    {"name": "SMR_VSA8", "type": "double"}, {"name": "SMR_VSA9", "type": "double"},
+    {"name": "SlogP_VSA1", "type": "double"}, {"name": "SlogP_VSA2", "type": "double"},
+    {"name": "SlogP_VSA3", "type": "double"}, {"name": "SlogP_VSA4", "type": "double"},
+    {"name": "SlogP_VSA5", "type": "double"}, {"name": "SlogP_VSA6", "type": "double"},
+    {"name": "SlogP_VSA7", "type": "double"}, {"name": "SlogP_VSA8", "type": "double"},
+    {"name": "SlogP_VSA9", "type": "double"}, {"name": "SlogP_VSA10", "type": "double"},
+    {"name": "SlogP_VSA11", "type": "double"}, {"name": "EState_VSA1", "type": "double"},
+    {"name": "EState_VSA2", "type": "double"}, {"name": "EState_VSA3", "type": "double"},
+    {"name": "EState_VSA4", "type": "double"}, {"name": "EState_VSA5", "type": "double"},
+    {"name": "EState_VSA6", "type": "double"}, {"name": "EState_VSA7", "type": "double"},
+    {"name": "EState_VSA8", "type": "double"}, {"name": "EState_VSA9", "type": "double"},
+    {"name": "EState_VSA10", "type": "double"}, {"name": "VSA_EState1", "type": "double"},
+    {"name": "VSA_EState2", "type": "double"}, {"name": "VSA_EState3", "type": "double"},
+    {"name": "VSA_EState4", "type": "double"}, {"name": "VSA_EState5", "type": "double"},
+    {"name": "VSA_EState6", "type": "double"}, {"name": "VSA_EState7", "type": "double"},
+    {"name": "VSA_EState8", "type": "double"}, {"name": "VSA_EState9", "type": "double"},
+    {"name": "MDEC-11", "type": "double"}, {"name": "MDEC-12", "type": "double"},
+    {"name": "MDEC-13", "type": "double"}, {"name": "MDEC-14", "type": "double"},
+    {"name": "MDEC-22", "type": "double"}, {"name": "MDEC-23", "type": "double"},
+    {"name": "MDEC-24", "type": "double"}, {"name": "MDEC-33", "type": "double"},
+    {"name": "MDEC-34", "type": "double"}, {"name": "MDEC-44", "type": "double"},
+    {"name": "MDEO-11", "type": "double"}, {"name": "MDEO-12", "type": "double"},
+    {"name": "MDEO-22", "type": "double"}, {"name": "MDEN-11", "type": "double"},
+    {"name": "MDEN-12", "type": "double"}, {"name": "MDEN-13", "type": "double"},
+    {"name": "MDEN-22", "type": "double"}, {"name": "MDEN-23", "type": "double"},
+    {"name": "MDEN-33", "type": "double"}, {"name": "MID", "type": "double"}, {"name":
+    "AMID", "type": "double"}, {"name": "MID_h", "type": "double"}, {"name": "AMID_h",
+    "type": "double"}, {"name": "MID_C", "type": "double"}, {"name": "AMID_C", "type":
+    "double"}, {"name": "MID_N", "type": "double"}, {"name": "AMID_N", "type": "double"},
+    {"name": "MID_O", "type": "double"}, {"name": "AMID_O", "type": "double"}, {"name":
+    "MID_X", "type": "double"}, {"name": "AMID_X", "type": "double"}, {"name": "MPC2",
+    "type": "double"}, {"name": "MPC3", "type": "double"}, {"name": "MPC4", "type":
+    "double"}, {"name": "MPC5", "type": "double"}, {"name": "MPC6", "type": "double"},
+    {"name": "MPC7", "type": "double"}, {"name": "MPC8", "type": "double"}, {"name":
+    "MPC9", "type": "double"}, {"name": "MPC10", "type": "double"}, {"name": "TMPC10",
+    "type": "double"}, {"name": "piPC1", "type": "double"}, {"name": "piPC2", "type":
+    "double"}, {"name": "piPC3", "type": "double"}, {"name": "piPC4", "type": "double"},
+    {"name": "piPC5", "type": "double"}, {"name": "piPC6", "type": "double"}, {"name":
+    "piPC7", "type": "double"}, {"name": "piPC8", "type": "double"}, {"name": "piPC9",
+    "type": "double"}, {"name": "piPC10", "type": "double"}, {"name": "TpiPC10", "type":
+    "double"}, {"name": "apol", "type": "double"}, {"name": "bpol", "type": "double"},
+    {"name": "nRing", "type": "double"}, {"name": "n3Ring", "type": "double"}, {"name":
+    "n4Ring", "type": "double"}, {"name": "n5Ring", "type": "double"}, {"name": "n6Ring",
+    "type": "double"}, {"name": "n7Ring", "type": "double"}, {"name": "n8Ring", "type":
+    "double"}, {"name": "n9Ring", "type": "double"}, {"name": "n10Ring", "type": "double"},
+    {"name": "n11Ring", "type": "double"}, {"name": "n12Ring", "type": "double"},
+    {"name": "nG12Ring", "type": "double"}, {"name": "nHRing", "type": "double"},
+    {"name": "n3HRing", "type": "double"}, {"name": "n4HRing", "type": "double"},
+    {"name": "n5HRing", "type": "double"}, {"name": "n6HRing", "type": "double"},
+    {"name": "n7HRing", "type": "double"}, {"name": "n8HRing", "type": "double"},
+    {"name": "n9HRing", "type": "double"}, {"name": "n10HRing", "type": "double"},
+    {"name": "n11HRing", "type": "double"}, {"name": "n12HRing", "type": "double"},
+    {"name": "nG12HRing", "type": "double"}, {"name": "naRing", "type": "double"},
+    {"name": "n3aRing", "type": "double"}, {"name": "n4aRing", "type": "double"},
+    {"name": "n5aRing", "type": "double"}, {"name": "n6aRing", "type": "double"},
+    {"name": "n7aRing", "type": "double"}, {"name": "n8aRing", "type": "double"},
+    {"name": "n9aRing", "type": "double"}, {"name": "n10aRing", "type": "double"},
+    {"name": "n11aRing", "type": "double"}, {"name": "n12aRing", "type": "double"},
+    {"name": "nG12aRing", "type": "double"}, {"name": "naHRing", "type": "double"},
+    {"name": "n3aHRing", "type": "double"}, {"name": "n4aHRing", "type": "double"},
+    {"name": "n5aHRing", "type": "double"}, {"name": "n6aHRing", "type": "double"},
+    {"name": "n7aHRing", "type": "double"}, {"name": "n8aHRing", "type": "double"},
+    {"name": "n9aHRing", "type": "double"}, {"name": "n10aHRing", "type": "double"},
+    {"name": "n11aHRing", "type": "double"}, {"name": "n12aHRing", "type": "double"},
+    {"name": "nG12aHRing", "type": "double"}, {"name": "nARing", "type": "double"},
+    {"name": "n3ARing", "type": "double"}, {"name": "n4ARing", "type": "double"},
+    {"name": "n5ARing", "type": "double"}, {"name": "n6ARing", "type": "double"},
+    {"name": "n7ARing", "type": "double"}, {"name": "n8ARing", "type": "double"},
+    {"name": "n9ARing", "type": "double"}, {"name": "n10ARing", "type": "double"},
+    {"name": "n11ARing", "type": "double"}, {"name": "n12ARing", "type": "double"},
+    {"name": "nG12ARing", "type": "double"}, {"name": "nAHRing", "type": "double"},
+    {"name": "n3AHRing", "type": "double"}, {"name": "n4AHRing", "type": "double"},
+    {"name": "n5AHRing", "type": "double"}, {"name": "n6AHRing", "type": "double"},
+    {"name": "n7AHRing", "type": "double"}, {"name": "n8AHRing", "type": "double"},
+    {"name": "n9AHRing", "type": "double"}, {"name": "n10AHRing", "type": "double"},
+    {"name": "n11AHRing", "type": "double"}, {"name": "n12AHRing", "type": "double"},
+    {"name": "nG12AHRing", "type": "double"}, {"name": "nFRing", "type": "double"},
+    {"name": "n4FRing", "type": "double"}, {"name": "n5FRing", "type": "double"},
+    {"name": "n6FRing", "type": "double"}, {"name": "n7FRing", "type": "double"},
+    {"name": "n8FRing", "type": "double"}, {"name": "n9FRing", "type": "double"},
+    {"name": "n10FRing", "type": "double"}, {"name": "n11FRing", "type": "double"},
+    {"name": "n12FRing", "type": "double"}, {"name": "nG12FRing", "type": "double"},
+    {"name": "nFHRing", "type": "double"}, {"name": "n4FHRing", "type": "double"},
+    {"name": "n5FHRing", "type": "double"}, {"name": "n6FHRing", "type": "double"},
+    {"name": "n7FHRing", "type": "double"}, {"name": "n8FHRing", "type": "double"},
+    {"name": "n9FHRing", "type": "double"}, {"name": "n10FHRing", "type": "double"},
+    {"name": "n11FHRing", "type": "double"}, {"name": "n12FHRing", "type": "double"},
+    {"name": "nG12FHRing", "type": "double"}, {"name": "nFaRing", "type": "double"},
+    {"name": "n4FaRing", "type": "double"}, {"name": "n5FaRing", "type": "double"},
+    {"name": "n6FaRing", "type": "double"}, {"name": "n7FaRing", "type": "double"},
+    {"name": "n8FaRing", "type": "double"}, {"name": "n9FaRing", "type": "double"},
+    {"name": "n10FaRing", "type": "double"}, {"name": "n11FaRing", "type": "double"},
+    {"name": "n12FaRing", "type": "double"}, {"name": "nG12FaRing", "type": "double"},
+    {"name": "nFaHRing", "type": "double"}, {"name": "n4FaHRing", "type": "double"},
+    {"name": "n5FaHRing", "type": "double"}, {"name": "n6FaHRing", "type": "double"},
+    {"name": "n7FaHRing", "type": "double"}, {"name": "n8FaHRing", "type": "double"},
+    {"name": "n9FaHRing", "type": "double"}, {"name": "n10FaHRing", "type": "double"},
+    {"name": "n11FaHRing", "type": "double"}, {"name": "n12FaHRing", "type": "double"},
+    {"name": "nG12FaHRing", "type": "double"}, {"name": "nFARing", "type": "double"},
+    {"name": "n4FARing", "type": "double"}, {"name": "n5FARing", "type": "double"},
+    {"name": "n6FARing", "type": "double"}, {"name": "n7FARing", "type": "double"},
+    {"name": "n8FARing", "type": "double"}, {"name": "n9FARing", "type": "double"},
+    {"name": "n10FARing", "type": "double"}, {"name": "n11FARing", "type": "double"},
+    {"name": "n12FARing", "type": "double"}, {"name": "nG12FARing", "type": "double"},
+    {"name": "nFAHRing", "type": "double"}, {"name": "n4FAHRing", "type": "double"},
+    {"name": "n5FAHRing", "type": "double"}, {"name": "n6FAHRing", "type": "double"},
+    {"name": "n7FAHRing", "type": "double"}, {"name": "n8FAHRing", "type": "double"},
+    {"name": "n9FAHRing", "type": "double"}, {"name": "n10FAHRing", "type": "double"},
+    {"name": "n11FAHRing", "type": "double"}, {"name": "n12FAHRing", "type": "double"},
+    {"name": "nG12FAHRing", "type": "double"}, {"name": "nRot", "type": "double"},
+    {"name": "RotRatio", "type": "double"}, {"name": "SLogP", "type": "double"}, {"name":
+    "SMR", "type": "double"}, {"name": "TopoPSA(NO)", "type": "double"}, {"name":
+    "TopoPSA", "type": "double"}, {"name": "GGI1", "type": "double"}, {"name": "GGI2",
+    "type": "double"}, {"name": "GGI3", "type": "double"}, {"name": "GGI4", "type":
+    "double"}, {"name": "GGI5", "type": "double"}, {"name": "GGI6", "type": "double"},
+    {"name": "GGI7", "type": "double"}, {"name": "GGI8", "type": "double"}, {"name":
+    "GGI9", "type": "double"}, {"name": "GGI10", "type": "double"}, {"name": "JGI1",
+    "type": "double"}, {"name": "JGI2", "type": "double"}, {"name": "JGI3", "type":
+    "double"}, {"name": "JGI4", "type": "double"}, {"name": "JGI5", "type": "double"},
+    {"name": "JGI6", "type": "double"}, {"name": "JGI7", "type": "double"}, {"name":
+    "JGI8", "type": "double"}, {"name": "JGI9", "type": "double"}, {"name": "JGI10",
+    "type": "double"}, {"name": "JGT10", "type": "double"}, {"name": "Diameter", "type":
+    "double"}, {"name": "Radius", "type": "double"}, {"name": "TopoShapeIndex", "type":
+    "double"}, {"name": "PetitjeanIndex", "type": "double"}, {"name": "Vabc", "type":
+    "double"}, {"name": "VAdjMat", "type": "double"}, {"name": "MWC01", "type": "double"},
+    {"name": "MWC02", "type": "double"}, {"name": "MWC03", "type": "double"}, {"name":
+    "MWC04", "type": "double"}, {"name": "MWC05", "type": "double"}, {"name": "MWC06",
+    "type": "double"}, {"name": "MWC07", "type": "double"}, {"name": "MWC08", "type":
+    "double"}, {"name": "MWC09", "type": "double"}, {"name": "MWC10", "type": "double"},
+    {"name": "TMWC10", "type": "double"}, {"name": "SRW02", "type": "double"}, {"name":
+    "SRW03", "type": "double"}, {"name": "SRW04", "type": "double"}, {"name": "SRW05",
+    "type": "double"}, {"name": "SRW06", "type": "double"}, {"name": "SRW07", "type":
+    "double"}, {"name": "SRW08", "type": "double"}, {"name": "SRW09", "type": "double"},
+    {"name": "SRW10", "type": "double"}, {"name": "TSRW10", "type": "double"}, {"name":
+    "MW", "type": "double"}, {"name": "AMW", "type": "double"}, {"name": "WPath",
+    "type": "double"}, {"name": "WPol", "type": "double"}, {"name": "Zagreb1", "type":
+    "double"}, {"name": "Zagreb2", "type": "double"}, {"name": "mZagreb1", "type":
+    "double"}, {"name": "mZagreb2", "type": "double"}]'
+  outputs: '[{"type": "double"}]'
+utc_time_created: '2020-12-13 02:55:11.565448'
