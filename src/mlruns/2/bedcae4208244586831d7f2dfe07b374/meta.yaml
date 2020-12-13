@@ -1,0 +1,15 @@
+artifact_uri: file:///home/yuma/PycharmProjects/brain3/src/mlruns/2/bedcae4208244586831d7f2dfe07b374/artifacts
+end_time: 1607829299247
+entry_point_name: ''
+experiment_id: '2'
+lifecycle_stage: active
+name: ''
+run_id: bedcae4208244586831d7f2dfe07b374
+run_uuid: bedcae4208244586831d7f2dfe07b374
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1607829282692
+status: 3
+tags: []
+user_id: yuma
