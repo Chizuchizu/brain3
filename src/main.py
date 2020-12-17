@@ -44,6 +44,7 @@ for fold in range(1, cfg["base"]["n_folds"] + 1):
 
     pred += estimator.predict(data) / cfg["base"]["n_folds"]
 
-if not debug:
-    for val in pred:
-        print(val)
+for val in pred:
+    val = float(val)
+    print(val)
+    # print(type(val))
